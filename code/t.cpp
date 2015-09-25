@@ -55,3 +55,37 @@ void heap_sort(node* a)
 		max_heapify(a, 1);
 	}
 }
+int main(void)
+{
+int input[11]={0, 1, 2, 5, 8, 10, 4, 3, 6, 9, 7};
+
+for (int i=1; i<=10; i++)
+{
+data[i].value= input[i];
+data[i].sequence = i;
+}
+
+build_max_heap(data);
+heap_sort(data);
+
+// 	for (i=1; i<=10; i++)
+// 	{
+// 	 std::cout<<data[i].value<<" "<<data[i].sequence<<std::endl;
+// 	}
+
+
+int last = 1;
+std::cout<<data[1].value<<" "<<std::flush;
+for(i = 2; i <= 10; i ++)
+{
+if(data[i].sequence > data[last].sequence)
+{
+last = i;
+std::cout<<std::endl;
+}
+
+std::cout<<data[i].value<<" ";
+}
+
+return 0;
+}
